@@ -35,7 +35,7 @@
 ---
 
 <div align="center">
-  <img src="./Clientes.png" alt="Banner Clientes" width="600px">
+  <img src="./Livraria.png" alt="Banner Livraria" width="600px">
 </div>
 
 ---
@@ -52,7 +52,6 @@ A arquitetura foi construída utilizando:
 - **PostMan para testes** 
 - **HTML, CSS e JavaScript** no frontend usando IA
 - **Banco de dados PostGreSQL** para desenvolvimento e testes  
-  → Acesse o console: http://localhost:8080/h2-console
 
 O objetivo não é apenas fazer funcionar, mas criar uma base sólida, organizada e pronta para evoluir.
 
