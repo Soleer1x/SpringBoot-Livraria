@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Livraria</title>
+    <link rel="stylesheet" href="livraria.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>📚 Livraria</h1>
+</header>
+
+<main>
+
+    <div class="card form-card">
+        <h2 id="form-title">Novo Livro</h2>
+
+        <div class="field">
+            <label>Título</label>
+            <input type="text" id="titulo" placeholder="Nome do livro"/>
+        </div>
+
+        <div class="field">
+            <label>Estoque</label>
+            <input type="number" id="estoque" placeholder="0" min="0"/>
+        </div>
+
+        <div class="field">
+            <label>Catálogo</label>
+            <select id="catalogo">
+                <option value="">Selecione...</option>
+                <option value="Michael">Michael</option>
+                <option value="SuperMario">Super Mario</option>
+                <option value="MaldicaoMumia">Maldição da Múmia</option>
+            </select>
+        </div>
+
+        <input type="hidden" id="edit-id"/>
+
+        <div class="form-actions">
+            <button id="btn-save" class="btn primary">Salvar</button>
+            <button id="btn-cancel" class="btn ghost" style="display:none">Cancelar</button>
+        </div>
+
+        <div id="toast" class="toast" style="display:none"></div>
+    </div>
+
+    <div class="list-area">
+        <div class="list-top">
+            <h2>Livros <span id="count" class="count"></span></h2>
+            <button id="btn-refresh" class="btn ghost small">↻ Atualizar</button>
+        </div>
+        <div id="livros-list"></div>
+    </div>
+
+</main>
+
+<div id="overlay" class="overlay" style="display:none">
+    <div class="modal">
+        <p>Deseja remover este livro?</p>
+        <div class="modal-actions">
+            <button id="modal-no"  class="btn ghost">Cancelar</button>
+            <button id="modal-yes" class="btn danger">Remover</button>
+        </div>
+    </div>
+</div>
+
+<script src="livraria.js"></script>
+</body>
+</html>
